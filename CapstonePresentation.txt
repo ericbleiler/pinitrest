@@ -1,0 +1,39 @@
+Index View 
+
+	-Select pin by tags for current user.
+	SELECT * FROM Pin INNER JOIN FollowTag ON Pin.TagID = FollowTag.TagID WHERE FollowTag.UserID = 1;
+
+Profile View
+
+	-Select current user info
+	SELECT * FROM User WHERE UserID = 1;
+
+List Board View
+
+	-Select board based on current user
+	SELECT * FROM Board INNER JOIN UserBoard ON Board.BoardID = UserBoard.BoardID WHERE UserBoard.UserID = 1;
+
+Board Pins View
+
+	-Select all pins where board id = *
+	SELECT * FROM Pin INNER JOIN BoardDetail ON Pin.PinID = BoardDetail.PinID WHERE BoardDetail.BoardID = 1;
+
+Add Pin
+	
+	-insert new pin
+	-INSERT INTO Pin (PinName, PinDesc, TagID, UserID) VALUES ("AnotherTest", "I Guess", 1, 1);
+
+Pin View
+	
+	-Select pin where pin id = *
+	-SELECT * FROM Pin WHERE PinID = 1;
+
+Create Board 
+	
+	-Insert new board
+	-INSERT INTO Board (BoardName, BoardDesc) VALUES ("AnotherTEst", "ugh");
+
+View Pin
+
+	-Select pin based on user id
+	-SELECT * FROM Pin WHERE UserID = 1;
